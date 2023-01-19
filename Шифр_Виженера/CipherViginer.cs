@@ -6,17 +6,20 @@
         {
             List<char> alphabet = new List<char>();
             const int firstChar = 0;
-            int index = firstChar;
-            int indexKey = firstChar;
+            int index = firstChar;//индекс символа в строке
+            int indexCharString = 0;//индекс первого символа в алфавите
+            int indexKey = firstChar;//текущий номер символа ключа
             string result = "";
+            int countChar = str.Length;
 
             switch (lang)
             {
                 case rasc.lat:
                     {
-                        for (int i = 65; i < 91; i++)
+                        for (int i = 65; i < 123; i++)
                         {
-                            alphabet.Add((char)i);
+                            if (char.IsLetter((char)i))
+                                alphabet.Add((char)i);
                         }
                     }
                     break;
@@ -24,9 +27,10 @@
                     {
                         for (int i = 1040; i < 1072; i++)
                         {
-                            alphabet.Add((char)i);
+                            if (char.IsLetter((char)i))
+                                alphabet.Add((char)i);
                         }
-                    }
+                    } 
                     break;
                 default:
                     {
@@ -35,12 +39,20 @@
             }
             for(int i = 0 ; i < str.Length; i++)
             {
-                //for(int j = 0; j)
-                //index
-                //result += alphabet[(firstChar + 1) % str.Length];
+                if (!alphabet.Contains(str[i]))
+                {
+                    result+= str[i];
+                }
+                else
+                {
+                    index = alphabet.FindIndex((char x) => x == str[i]);
+                    var indexCipher = alphabet.FindIndex(x => x == key[indexKey]);
+                    result += alphabet[(indexCipher + index) % alphabet.Count];
+                    indexKey = (indexKey + 1) % key.Length;
+                }
             }
 
-            return str;
+            return result;
         }
     }
 
@@ -49,4 +61,5 @@
         lat,
         kir
     }
+     
 }
