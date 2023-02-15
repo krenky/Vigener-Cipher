@@ -2,9 +2,9 @@
 {
     public static class GeneratorPassword
     {
-        public static string[] Generate(int countPassword, int countChar) 
+        public static List<string> Generate(int countPassword, int countChar) 
         {
-            string[] passwords = new string[countPassword];
+            List<string> passwords = new List<string>();
 
             Random rnd = new Random();
 
@@ -25,7 +25,7 @@
                         password += (char)rnd.Next(97, 123);
                     }
                 }
-                passwords[i] = password;
+                passwords.Add(password);
             }
             return passwords;
         }

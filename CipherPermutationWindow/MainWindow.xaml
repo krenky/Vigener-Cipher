@@ -1,0 +1,20 @@
+﻿<Window x:Class="CipherPermutationWindow.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CipherPermutationWindow"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="219" Width="397">
+    <Grid>
+        <TextBox x:Name="DecryptBox" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <Label Content="- Исходный текст" HorizontalAlignment="Left" Margin="135,6,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="EncrypBox" HorizontalAlignment="Left" Margin="10,33,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <Label Content="- Зашифрованный текст" HorizontalAlignment="Left" Margin="135,29,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="EncryptButton" Content="Зашифровать" HorizontalAlignment="Left" Margin="10,83,0,0" VerticalAlignment="Top" Click="EncryptButton_Click"/>
+        <Button x:Name="DecryptButton" Content="Расшифровать" HorizontalAlignment="Left" Margin="10,108,0,0" VerticalAlignment="Top" Click="DecryptButton_Click"/>
+        <TextBox x:Name="KeyBox" HorizontalAlignment="Left" Margin="10,60,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="Key" Content=" - Ключь" HorizontalAlignment="Left" Margin="135,56,0,0" VerticalAlignment="Top"/>
+
+    </Grid>
+</Window>
